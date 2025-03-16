@@ -10,7 +10,9 @@ To run IBDkin, run the command line with the following options:
 
 '/pathto/IBDkin --ibdfile ${ibdfile} --map ${map} --ind ${ind} --range ${range} --nthreads ${n_thread} --out /users/projects/migration/DNK_UKBB/all_chrs/ibd_sum/by_chr/chr1/${low_ibd}/ibdkin_merge_chr1_${low_ibd} --outmask --outcoverage --cutcm ${low_ibd} ${upper_ibd} --cutprob ${ibd_prob} --remove_overlap 1'
 
-ibdfile - a list of file paths of FastSMC IBD calling output (one file path for each line and each file is in gz format)
+The input options include: 
+--ibdfile - a list of file paths of FastSMC IBD calling output (one file path for each line and each file is in gz format)
+--map - genetic map in PLINK format
 
 
 
