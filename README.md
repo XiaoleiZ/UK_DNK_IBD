@@ -24,6 +24,7 @@ For cohorts with a biobank-scale sample size (N>500K), to speed up the process, 
 ## ibdstat - summarise the total IBD sharing and total number of IBD segments among pairs from geographic areas
 
 The output format is the following (each column is delimited by tab): 
+
 'area1\tarea2\ttotg\tcount'
 
 area1 - name of Area 2
