@@ -8,11 +8,19 @@ We updated the published program IBDkin (https://doi.org/10.1093/bioinformatics/
 
 To run IBDkin, run the command line with the following options:
 
-'/pathto/IBDkin --ibdfile ${ibdfile} --map ${map} --ind ${ind} --range ${range} --nthreads ${n_thread} --out /users/projects/migration/DNK_UKBB/all_chrs/ibd_sum/by_chr/chr1/${low_ibd}/ibdkin_merge_chr1_${low_ibd} --outmask --outcoverage --cutcm ${low_ibd} ${upper_ibd} --cutprob ${ibd_prob} --remove_overlap 1'
+`/pathto/IBDkin --ibdfile ${ibdfile} --map ${map} --ind ${ind} --range ${range} --nthreads ${n_thread} --out $output_file --outmask --outcoverage --cutcm 2 100 --cutprob 0.5 --remove_overlap 1`
 
 The input options include: 
---ibdfile - a list of file paths of FastSMC IBD calling output (one file path for each line and each file is in gz format)
+--ibdfile - a list of file paths of FastSMC IBD calling output (one file path per line)
 --map - genetic map in PLINK format
+--ind - a list of sample IDs included in the calculation (one ID per line)
+--range - genomic regions considered for each chromosome (genomic coordinates). In our case, we used the range covered by the genetic maps. 
+--nthreads number of threads processing at the same time
+--cutcm [lowibd] [upibd] only include IBD segments within the range [lowibd, upibd]
+--cutprob [prob] only include IBD segments with >0.5 predictive probability (from FastSMC)
+--remove_overlap [Boolean] keey only the longest IBD segment from the same pair if there are multiple and overlapping with each other.    
+
+
 
 
 
