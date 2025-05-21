@@ -28,9 +28,11 @@ The input options include:
 --remove_overlap [boolean] 1 if only to keep the longest IBD segment from the same pair if there are multiple and overlapping with each other otherwise 0.     
 
 
-The output format is the following (each column is delimited by a tab): 
+The output has the following columns (each column is delimited by a tab): 
 
 `ID1  ID2  segnum  IBD1  IBD2  totg`
+
+Each column has the following information: 
 
 ID1 - individual ID for individual 1
 
