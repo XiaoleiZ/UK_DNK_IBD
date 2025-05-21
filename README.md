@@ -12,12 +12,19 @@ To run IBDkin, run the command line with the following options:
 
 The input options include: 
 --ibdfile - a list of file paths of FastSMC IBD calling output (one file path per line)
+
 --map - genetic map in PLINK format
+
 --ind - a list of sample IDs included in the calculation (one ID per line)
+
 --range - genomic regions considered for each chromosome (genomic coordinates). In our case, we used the range covered by the genetic maps. 
+
 --nthreads number of threads processing at the same time
+
 --cutcm [lowibd] [upibd] only include IBD segments within the range [lowibd, upibd]
+
 --cutprob [prob] only include IBD segments with >0.5 predictive probability (from FastSMC)
+
 --remove_overlap [Boolean] keey only the longest IBD segment from the same pair if there are multiple and overlapping with each other.    
 
 
