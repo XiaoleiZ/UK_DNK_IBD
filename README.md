@@ -1,34 +1,50 @@
-# UK_DNK_IBD
 
-Programs used to analyse biobank-scale IBD sharing data
-
-## IBDkin - get individual pairwise total IBD sharing and total number of IBD segments
-
-We updated the published program IBDkin (https://doi.org/10.1093/bioinformatics/btaa569) to take IBD calling results from FastSMC as input and added customised processing options. 
-
-To run IBDkin, run the command line with the following options:
-
-`/pathto/IBDkin --ibdfile ${ibdfile} --map ${map} --ind ${ind} --range ${range} --nthreads ${n_thread} --out $output_file --outmask --outcoverage --cutcm 2 100 --cutprob 0.5 --remove_overlap 1`
-
-The input options include: 
---ibdfile [string] - filename of a list of file paths of FastSMC IBD calling output (one file path per line)
-
---map [string] - filename of genetic map in PLINK format
-
---ind [string] - filename of a list of sample IDs included in the calculation (one ID per line)
-
---range [string]-  filename of a list of genomic regions considered for each chromosome, including three columns: the chromosome identifier, starting bp position, and ending bp position. In our case, we used the range covered by the genetic maps. 
-
---nthreads [int] - number of threads processing at the same time
-
---cutcm [float] [float] only include IBD segments within the input range; first value is lower bound and the second one for the upper bound 
-
---cutprob [float] only include IBD segments with the predictive probability (from FastSMC) above the threshold 
-
---remove_overlap [boolean] 1 if only to keep the longest IBD segment from the same pair if there are multiple and overlapping with each other otherwise 0.     
+# IBDbillion
+ 
+C programs for efficient processing of billion-scale pairwise IBD sharing. 
 
 
-The output has the following columns (each column is delimited by a tab): 
+## IBDkin – Calculate Pairwise Total IBD Sharing
+
+We modified the published program [IBDkin](https://doi.org/10.1093/bioinformatics/btaa569) to accept IBD segment calls from **FastSMC** and added custom processing options.
+
+---
+
+### Usage
+
+To run our version of the IBDkin, use the following command:
+
+```bash
+/pathto/IBDkin \
+  --ibdfile ${ibdfile} \
+  --map ${map} \
+  --ind ${ind} \
+  --range ${range} \
+  --nthreads ${n_thread} \
+  --out ${output_file} \
+  --outmask \
+  --outcoverage \
+  --cutcm 2 100 \
+  --cutprob 0.5 \
+  --remove_overlap 1
+
+
+Input Options
+
+| Option             | Type          | Description                                                                    |
+| ------------------ | ------------- | ------------------------------------------------------------------------------ |
+| `--ibdfile`        | `string`      | File containing a list of paths to FastSMC IBD output files (one per line)     |
+| `--map`            | `string`      | Genetic map file in PLINK format                                               |
+| `--ind`            | `string`      | File with sample IDs to include (one ID per line)                              |
+| `--range`          | `string`      | File with genomic regions included for each chromosome: chromosome, start bp, end bp. In our case, we used the range covered by the genetic maps.          |
+| `--nthreads`       | `int`         | Number of threads to use                                                       |
+| `--cutcm`          | `float float` | Minimum and maximum cM range for IBD segments                                  |
+| `--cutprob`        | `float`       | Minimum predictive probability threshold for IBD segments (output of FastSMC)                      |
+| `--remove_overlap` | `boolean`     | `1` to retain only the longest overlapping IBD segment per pair; `0` otherwise |
+
+
+
+The output has the following columns (a tab delimits each column): 
 
 `ID1  ID2  segnum  IBD1  IBD2  totg`
 
@@ -40,13 +56,13 @@ ID2 - individual ID for individual 2
 
 segnum - total number of IBD segments
 
-IBD1 - total sharing of IBD1 (cM) (only one pair of haplotypes share IBD)  
+IBD1 - total sharing of IBD1 (cM) (only one pair of haplotypes shares IBD)  
 
 IBD2 - total sharing of IBD2 (cM) (two pairs of haplotypes share IBD)
 
 totg - total IBD sharing (cM), which is calculated as IBD1+2*IBD2
 
-For cohorts with a biobank-scale sample size (N>500K), to speed up the process, one can run this program in parallel for each chromosome and then combine the computed results for all the chromosomes. Thus we also developed sumchr_IBDkin. 
+For cohorts with a biobank-scale sample size (N>500K), to speed up the process, one can run this program in parallel for each chromosome and then combine the computed results for all the chromosomes. Thus, we also developed **sumchr_IBDkin**. 
 
 ## sumchr_IBDkin  - combine multiple outputs from IBDkin into one
 
