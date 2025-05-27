@@ -36,11 +36,11 @@ Input Options
 | `--ibdfile`        | `string`      | File containing a list of paths to FastSMC IBD output files (one per line)     |
 | `--map`            | `string`      | Genetic map file in PLINK format                                               |
 | `--ind`            | `string`      | File with sample IDs to include (one ID per line)                              |
-| `--range`          | `string`      | File with genomic regions included for each chromosome: chromosome, start bp, end bp. In our case, we used the range covered by the genetic maps.          |
+| `--range`          | `string`      | File with genomic regions included for each chromosome: <br>chromosome, start bp, end bp. We used the range covered by the genetic maps in our case.          |
 | `--nthreads`       | `int`         | Number of threads to use                                                       |
 | `--cutcm`          | `float float` | Minimum and maximum cM range for IBD segments                                  |
 | `--cutprob`        | `float`       | Minimum predictive probability threshold for IBD segments (output of FastSMC)                      |
-| `--remove_overlap` | `boolean`     | `1` to retain only the longest overlapping IBD segment per pair; `0` otherwise |
+| `--remove_overlap` | `boolean`     | `1` to retain only the longest overlapping IBD segment per pair; <br> `0` otherwise |
 
 
 
