@@ -4,7 +4,7 @@
 C programs for efficient processing of billion-scale pairwise IBD sharing. 
 
 
-## IBDkin – Calculate Pairwise Total IBD Sharing
+## IBDkin_fastsmc – Calculate Pairwise Total IBD Sharing
 
 We modified the published program [IBDkin](https://doi.org/10.1093/bioinformatics/btaa569) to accept IBD segment calls from **FastSMC** and added custom processing options.
 
@@ -15,7 +15,7 @@ We modified the published program [IBDkin](https://doi.org/10.1093/bioinformatic
 To run our version of the IBDkin, use the following command:
 
 ```bash
-/pathto/IBDkin \
+/pathto/IBDkin_fastsmc \
   --ibdfile ${ibdfile} \
   --map ${map} \
   --ind ${ind} \
@@ -43,26 +43,22 @@ Input Options
 | `--remove_overlap` | `boolean`     | `1` to retain only the longest overlapping IBD segment per pair; <br> `0` otherwise |
 
 
+Output Format
+The output is a tab-delimited file with the following columns: 
 
-The output has the following columns (a tab delimits each column): 
+| Column   | Description                                                 |
+| -------- | ----------------------------------------------------------- |
+| `ID1`    | Individual ID for person 1                                  |
+| `ID2`    | Individual ID for person 2                                  |
+| `segnum` | Total number of IBD segments shared                         |
+| `IBD1`   | Total IBD1 sharing (cM): one pair of haplotypes shares IBD  |
+| `IBD2`   | Total IBD2 sharing (cM): both pairs of haplotypes share IBD |
+| `totg`   | Total IBD sharing (cM), calculated as `IBD1 + 2 × IBD2`     |
 
-`ID1  ID2  segnum  IBD1  IBD2  totg`
+Parallelisation
 
-Each column has the following information: 
-
-ID1 - individual ID for individual 1
-
-ID2 - individual ID for individual 2
-
-segnum - total number of IBD segments
-
-IBD1 - total sharing of IBD1 (cM) (only one pair of haplotypes shares IBD)  
-
-IBD2 - total sharing of IBD2 (cM) (two pairs of haplotypes share IBD)
-
-totg - total IBD sharing (cM), which is calculated as IBD1+2*IBD2
-
-For cohorts with a biobank-scale sample size (N>500K), to speed up the process, one can run this program in parallel for each chromosome and then combine the computed results for all the chromosomes. Thus, we also developed **sumchr_IBDkin**. 
+For cohorts with biobank-scale sample sizes (e.g., N ~ 500,000), we recommend running IBDkin separately for each chromosome to speed up computation and then combining results across all the chromosomes. 
+To assist with this, we also developed a program called **sumchr_IBDkin** to combine the results across chromosomes efficiently.
 
 ## sumchr_IBDkin  - combine multiple outputs from IBDkin into one
 
