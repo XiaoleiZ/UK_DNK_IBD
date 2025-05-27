@@ -27,7 +27,7 @@ To run our version of the IBDkin, use the following command:
   --cutcm 2 100 \
   --cutprob 0.5 \
   --remove_overlap 1
-
+```
 
 Input Options
 
