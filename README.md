@@ -44,6 +44,7 @@ Input Options
 
 
 Output Format
+
 The output is a tab-delimited file with the following columns: 
 
 | Column   | Description                                                 |
@@ -87,6 +88,7 @@ Input Options
 
 
 Output Format
+
 The output is a tab-delimited file with the following columns: 
 
 | Column   | Description                                                 |
@@ -128,6 +130,8 @@ Input Options
 | `--count_county`  | NA | Output pairwise statistics at county level |
 | `--count_council`  | NA | Output pairwise statistics at council level |
 | `--segnum`  | NA | Use this option to output the summary statistics of the total number of IBD segments. Without this option, will output summary statistics based on the total sum of IBD sharing lengths | 
+
+Output format
 
 The output format is the following (each column is delimited by tab): 
 
