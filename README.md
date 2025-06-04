@@ -65,6 +65,10 @@ To assist with this, we also developed a program called **sumchr_IBDkin** to com
 
 sumchr_IBDkin takes multiple text files output from IBDkin_fastsmc, and aggregate the IBD sharing infomation including total IBD sharing and total IBD segments for all pairs observed. 
 
+---
+
+### Usage
+
 ```bash
 /pathto/sumchr_IBDkin \
   --ibdsum_file ${ibdsum} \
@@ -103,6 +107,10 @@ The output is a tab-delimited file with the following columns:
 
 
 ## ibdstat - summarise the total IBD sharing and total number of IBD segments among pairs from geographic areas
+
+---
+
+### Usage
 
 ```bash
 /pathto/ibdstat \
