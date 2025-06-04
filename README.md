@@ -73,7 +73,7 @@ sumchr_IBDkin takes multiple text files output from IBDkin_fastsmc, and aggregat
   --self [Pop_name]
   --across [Pop1_name] [Pop2_name]
    \
-  `
+  ```
 
 Input Options
 
@@ -114,7 +114,7 @@ The output is a tab-delimited file with the following columns:
   --count_council
   --segnum
  \
-  `
+  ```
 
 Input Options
 
