@@ -1,0 +1,12 @@
+int close_pair_t_cmp(const void *a, const void *b);
+int ID_t_cmp(const void *a, const void *b);
+int string_cmp(const void *a, const void *b);
+int Geo_t_cmp(const void *a, const void *b);
+//int binary_search_pair_index(Pair_t **pair_area, int pair_len, char *geo1, char *geo2, int ibd_len);
+int binary_search_geo_index(char *place, Geo_t **geo_place, int len_geo);
+int binary_search_ID_index(char *id);
+void p_std_time(double seconds);
+void print_help(void);
+double my_wallclock(void);
+void free_all(void);
+int binary_search_pairID_index(char *pair_id);
