@@ -1,6 +1,8 @@
 
 # IBDbillion
- 
+
+## Introduction
+
 C programs for efficient processing of billion-scale pairwise IBD sharing developed in the manuscript: <em>Population-scale inheritance analysis of 858,635 individuals reveals North Sea migration from the Middle Ages to the Industrial Revolution</em> https://doi.org/10.1101/2025.03.19.643007. 
 
 There are three programs: **IBDkin_fastsmc**, **sumchr_IBDkin** and **ibdstat**. We also provided demo data for testing each program, which can be found inside the `test` folders. 
