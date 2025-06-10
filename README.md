@@ -5,7 +5,8 @@ C programs for efficient processing of billion-scale pairwise IBD sharing develo
 
 There are three programs: **IBDkin_fastsmc**, **sumchr_IBDkin** and **ibdstat**. We also provided demo data for testing each program, which can be found inside the `test` folders. 
 
-The usage of the programs follows this ![workflow] (diagram.jpg)
+The usage of the programs follows this workflow:
+![Workflow Diagram](/diagram.jpg) 
 
 ## IBDkin_fastsmc – Calculate Pairwise Total IBD Sharing
 
