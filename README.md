@@ -1,12 +1,12 @@
 
 # IBDbillion
  
-C programs for efficient processing of billion-scale pairwise IBD sharing. 
+C programs for efficient processing of billion-scale pairwise IBD sharing: **IBDkin_fastsmc**, **sumchr_IBDkin** and **ibdstat**. We also provided demo data for testing each program, which can be found inside the `test` folders. 
 
 
 ## IBDkin_fastsmc – Calculate Pairwise Total IBD Sharing
 
-We modified the published program [IBDkin](https://doi.org/10.1093/bioinformatics/btaa569) to accept IBD segment calls from **FastSMC** and added custom processing options.
+We modified the published program [IBDkin](https://doi.org/10.1093/bioinformatics/btaa569) to accept IBD segment calls from [FastSMC[ (https://doi.org/10.1038/s41467-020-19588-x) and added custom processing options.
 
 ---
 
