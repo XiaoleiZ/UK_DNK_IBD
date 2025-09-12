@@ -1,5 +1,5 @@
 
-# IBDbillion
+# IBDBillion
 
 ## Introduction
 
