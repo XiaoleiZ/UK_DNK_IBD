@@ -12,7 +12,9 @@ The usage of the programs follows this workflow:
 
 ## IBDkin_fastsmc – Calculate Pairwise Total IBD Sharing
 
-We modified the published program [IBDkin](https://doi.org/10.1093/bioinformatics/btaa569) to accept IBD segment calls from [FastSMC](https://doi.org/10.1038/s41467-020-19588-x) and added custom processing options.
+We modified the published program [IBDkin](https://doi.org/10.1093/bioinformatics/btaa569) to accept IBD segment calls from [FastSMC](https://doi.org/10.1038/s41467-020-19588-x) and added custom processing options. 
+
+It also allows users to merge overlapping IBD segments (with option `--remove_overlap 1`) since they could be artefacts. 
 
 ---
 
